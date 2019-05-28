@@ -60,7 +60,7 @@ export default class App extends Component {
         params: {
           address: myAddress
         },
-        to: config.CONTRACT_ADDRESS,
+        to: window.CONTRACT_ADDRESS,
       })
     ).execute()
     console.log(colour)
@@ -76,7 +76,7 @@ export default class App extends Component {
     const { colour, myAddress } = this.state
     const txObj = sendTxBuild({
       from: myAddress,
-      to: config.CONTRACT_ADDRESS,
+      to: window.CONTRACT_ADDRESS,
       methodName: 'set_mood_code',
       params: {
         code: IconConverter.toHex(Number(colour)), 
@@ -84,7 +84,7 @@ export default class App extends Component {
     })
     // const txObj = sendTxBuild({
     //   from: myAddress,
-    //   to: config.CONTRACT_ADDRESS,
+    //   to: window.CONTRACT_ADDRESS,
     //   methodName: 'add_movie',
     //   params: {
     //     idx: IconConverter.toHex(id),
